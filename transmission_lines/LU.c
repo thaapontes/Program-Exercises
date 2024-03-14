@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <math.h>
 
-float** DecompoeLU(float** A){
+float** decomposeLU(float** A){
     int k,i,j,c;
-    //int l,t;
-    //double max;
-    //double* p = malloc((n+2) *sizeof(double));
-    //for(int f=1;f<n+2;f++){
-     //   p[f]=0;
-    //}
+    int l,t;
+    double max;
+    double* p = malloc((n+2) *sizeof(double));
+    for(int f=1;f<n+2;f++){
+        p[f]=0;
+    }
 
     for (k=1;k<n;k++){
         for(i=k;i<n;i++){
@@ -19,15 +19,15 @@ float** DecompoeLU(float** A){
             A[i][k]=A[i][k] - c;
         }
     }
-    //for (l=k;l<n;l++){
-       // for(i=k;i<n+1;i++){
-          //  if(abs(A[i][k])>abs(A[i-1][k]))
-            //    max = A[i][k];
-       // }
-        //if(abs(A[l][k])== max)
-         //   t = l;
-         //   p[k]=l;
-   // }
+    for (l=k;l<n;l++){
+        for(i=k;i<n+1;i++){
+            if(abs(A[i][k])>abs(A[i-1][k]))
+                max = A[i][k];
+        }
+        if(abs(A[l][k])== max)
+            t = l;
+            p[k]=l;
+    }
 }
 
 

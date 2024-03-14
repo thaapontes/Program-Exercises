@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int AchaMaiorValor(int A[n][n],int n){
+int findGreaterValue(int A[n][n],int n){
     int i,k,max;
     for(l=k;l<n;l++){
         for(i=k;i<n+1;i++){
@@ -16,7 +16,7 @@ int AchaMaiorValor(int A[n][n],int n){
 
 
 int main(){
-    int maximo,i,j;
+    int maximum,i,j;
     int B[3][3];
 
     for(i=0;i<3;i++){
@@ -26,8 +26,8 @@ int main(){
         }
     }
 
-    maximo = AchaMaiorValor(B[3][3],3);
-    printf("%d", maximo);
+    maximum = findGreaterValue(B[3][3],3);
+    printf("%d", maximum);
 
 
 
